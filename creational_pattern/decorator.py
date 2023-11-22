@@ -6,7 +6,9 @@ def logit(func):
         print(func.__name__ + " was called")
         print('args: ',args)
         print('kwargs: ',kwargs)
-        return func(*args, **kwargs)
+        result = func(*args, **kwargs)
+        print('result of function: ',result)
+        return result
     return with_logging
 
 @logit
@@ -14,7 +16,7 @@ def addition_func(x,y):
    """Do some math."""
    return x + y
 
-result = addition_func(4,5)
-result = addition_func(6,7)
-print(result)
+if __name__ == '__main__':
+    result = addition_func(4,5)
+    print("result: ",result)
 
